@@ -10,11 +10,14 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.red,
-        title: Text('Home'),
+        title:const Text('Blood Donation App'),
       ),
+      floatingActionButton: FloatingActionButton(onPressed: (){},
+      backgroundColor: Colors.red,
+      child:const Icon(Icons.add,size: 35,),),
     );
   }
 }

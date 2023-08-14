@@ -15,7 +15,9 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: Colors.red,
         title:const Text('Blood Donation App'),
       ),
-      floatingActionButton: FloatingActionButton(onPressed: (){},
+      floatingActionButton: FloatingActionButton(onPressed: (){
+        Navigator.pushNamed(context, '/add');
+      },
       backgroundColor: Colors.red,
       child:const Icon(Icons.add,size: 35,),),
     );

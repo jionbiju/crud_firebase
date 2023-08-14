@@ -1,5 +1,4 @@
 import 'package:crud_firebase/screens/adduser.dart';
-import 'package:crud_firebase/screens/home.dart';
 import 'package:crud_firebase/screens/splash.dart';
 import 'package:flutter/material.dart';
 
@@ -22,7 +21,10 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
         primaryColor:Colors.red),
         home: const Splashscreen(),
-        
+        routes: {
+          '/add':(context) =>const AddUser(),
+          
+        },
     );
   }
 }

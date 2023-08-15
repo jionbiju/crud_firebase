@@ -30,7 +30,7 @@ class _AddUserState extends State<AddUser> {
             const SizedBox(
               height: 10,
             ),
-            Padding(
+            const Padding(
               padding: EdgeInsets.symmetric(vertical: 8),
               child: TextField(
                 keyboardType: TextInputType.number,
@@ -55,7 +55,17 @@ class _AddUserState extends State<AddUser> {
               .toList(), onChanged: (val){
                 selectedbloodgroups=val;
               }),
-            )
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            ElevatedButton(
+            style:const ButtonStyle(
+              backgroundColor: MaterialStatePropertyAll(Colors.red),
+              minimumSize: MaterialStatePropertyAll(Size(double.infinity, 50)),
+            ),
+            onPressed: (){},
+            child:const Text('Submit', style: TextStyle(fontSize: 25),)),
           ],
         ),
       ),

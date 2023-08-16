@@ -23,30 +23,44 @@ class _HomeScreenState extends State<HomeScreen> {
       backgroundColor: Colors.red,
       child:const Icon(Icons.add,size: 35,),),
       body: StreamBuilder(
-       stream:donor.snapshots() ,
+       stream:donor.orderBy('name').snapshots() ,
        builder:(context, AsyncSnapshot snapshot) {
          if(snapshot.hasData){
-          return Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: ListView.builder(
-              itemCount: snapshot.data!.docs.length,
-              itemBuilder: (context, index) {
-                final DocumentSnapshot donorsnap=snapshot.data.docs[index];
-                return Container(
+          return ListView.builder(
+            itemCount: snapshot.data!.docs.length,
+            itemBuilder: (context, index) {
+              final DocumentSnapshot donorsnap=snapshot.data.docs[index];
+              return Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.lightBlueAccent,
+                        blurRadius: 10,
+                        spreadRadius: 15,
+                      ),
+                    ],
+                  ),
                   height: 80,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Container(
-                        child: CircleAvatar(
-                          radius: 20,
-                          backgroundColor: Colors.red,
-                          child: Text(donorsnap['blood group'],style: TextStyle(
-                            fontSize: 25,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                          ),),
-                        ), 
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Container(
+                          child: CircleAvatar(
+                            radius: 25,
+                            backgroundColor: Colors.red,
+                            child: Text(donorsnap['blood group'],style: TextStyle(
+                              fontSize: 25,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                            ),),
+                          ), 
+                        ),
                       ),
                       Column(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -59,11 +73,32 @@ class _HomeScreenState extends State<HomeScreen> {
                           fontSize: 19,
                         ),),
                       ],),
+                      Row(
+                        children: [
+                          IconButton(onPressed: (){
+                            Navigator.pushNamed(context, 'update',
+                            arguments: {
+                              'name':donorsnap['name'],
+                              'phone number':donorsnap['phone number'].toString(),
+                              'blood group':donorsnap['blood group'],
+                              'id':donorsnap.id,
+                            },);
+                          },
+                          icon: Icon(Icons.edit),
+                          iconSize: 25,
+                          color: Colors.blue,
+                          hoverColor: Colors.red,),
+                          IconButton(onPressed: (){}, 
+                          icon: Icon(Icons.delete),
+                          color: const Color.fromARGB(255, 255, 17, 0),
+                          iconSize: 25,),
+                        ],
+                      ),
                     ],
                   ),
-                );
-              },),
-          );
+                ),
+              );
+            },);
          }
          return Container();
        },),

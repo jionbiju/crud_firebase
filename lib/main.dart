@@ -1,3 +1,4 @@
+import 'package:crud_firebase/screens/updatedata.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -29,6 +30,7 @@ class _MyAppState extends State<MyApp> {
         home: const Splashscreen(),
         routes: {
           '/add':(context) =>const AddUser(),
+          'update':(context) =>const UpdateDonor(),
           
         },
     );

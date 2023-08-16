@@ -2,35 +2,32 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 
-class AddUser extends StatefulWidget {
-  const AddUser({super.key});
+class UpdateDonor extends StatefulWidget {
+  const UpdateDonor({super.key});
 
   @override
-  State<AddUser> createState() => _AddUserState();
+  State<UpdateDonor> createState() => _UpdateDonorState();
 }
 
-class _AddUserState extends State<AddUser> {
+class _UpdateDonorState extends State<UpdateDonor> {
   final bloodGroup=['A+','A-', 'B+', 'B-', 'O+', 'O-', 'AB+', 'AB-'];
   String? selectedbloodgroups;
   final CollectionReference donor=FirebaseFirestore.instance.collection('donor');
   TextEditingController donorname=TextEditingController();
   TextEditingController  donorphone=TextEditingController();
-  void adduserdata(){
-    final data={
-      'name':donorname.text,
-      'phone number':donorphone.text.toString(),
-      'blood group':selectedbloodgroups,
-    };
-    donor.add(data);
-  }
+  
 
 
   @override
   Widget build(BuildContext context) {
+    // ignore: unnecessary_nullable_for_final_variable_declarations
+    final Map<dynamic ,dynamic>? arg=ModalRoute.of(context)!.settings.arguments as Map ;
+    
+    
     return  Scaffold(
        appBar: AppBar(
         backgroundColor: Colors.red,
-        title:const Text('Add Donors'),
+        title:const Text('Update Donor Details'),
       ),
       body: Padding(
         padding:const EdgeInsets.all(8.0),
@@ -82,9 +79,9 @@ class _AddUserState extends State<AddUser> {
               minimumSize: MaterialStatePropertyAll(Size(double.infinity, 50)),
             ),
             onPressed: (){
-              adduserdata();
+              print(arg);
             },
-            child:const Text('Submit', style: TextStyle(fontSize: 25),)),
+            child:const Text('Upadate', style: TextStyle(fontSize: 25),)),
           ],
         ),
       ),

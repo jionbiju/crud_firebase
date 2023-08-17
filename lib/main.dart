@@ -1,10 +1,11 @@
-import 'package:crud_firebase/screens/updatedata.dart';
+
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:crud_firebase/screens/adduser.dart';
 import 'package:crud_firebase/screens/splash.dart';
 import 'firebase_options.dart';
+import 'package:crud_firebase/screens/updatedata.dart';
 
 
 Future<void> main() async {
@@ -30,7 +31,7 @@ class _MyAppState extends State<MyApp> {
         home: const Splashscreen(),
         routes: {
           '/add':(context) =>const AddUser(),
-          'update':(context) =>const UpdateDonor(),
+          'update':(context) => const UpdateDonor(),
           
         },
     );

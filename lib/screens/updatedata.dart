@@ -15,13 +15,28 @@ class _UpdateDonorState extends State<UpdateDonor> {
   final CollectionReference donor=FirebaseFirestore.instance.collection('donor');
   TextEditingController donorname=TextEditingController();
   TextEditingController  donorphone=TextEditingController();
+  void updatedata(docid){
+    final data={
+      'name':donorname.text,
+      'phone number':donorphone.text.toString(),
+      'blood group':selectedbloodgroups
+    };
+    donor.doc(docid).update(data).then((value) => Navigator.pop(context));
+  }
+
   
 
 
   @override
   Widget build(BuildContext context) {
     // ignore: unnecessary_nullable_for_final_variable_declarations
-    final Map<dynamic ,dynamic>? arg=ModalRoute.of(context)!.settings.arguments as Map ;
+    final Map<dynamic, dynamic>  arg=ModalRoute.of(context)?.settings.arguments as Map ;
+    donorname.text=arg['name'];
+    donorphone.text=arg['phone number'];
+    selectedbloodgroups=arg['blood group'];
+    final docid=arg['id'];
+    
+
     
     
     return  Scaffold(
@@ -58,6 +73,7 @@ class _UpdateDonorState extends State<UpdateDonor> {
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 8),
               child: DropdownButtonFormField(
+                value: selectedbloodgroups,
               decoration:const InputDecoration(
                 label:Text('Select Blood Group'),
               ),  
@@ -79,9 +95,9 @@ class _UpdateDonorState extends State<UpdateDonor> {
               minimumSize: MaterialStatePropertyAll(Size(double.infinity, 50)),
             ),
             onPressed: (){
-              print(arg);
+              updatedata(docid);
             },
-            child:const Text('Upadate', style: TextStyle(fontSize: 25),)),
+            child:const Text('Update', style: TextStyle(fontSize: 25),)),
           ],
         ),
       ),

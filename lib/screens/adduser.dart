@@ -22,6 +22,10 @@ class _AddUserState extends State<AddUser> {
       'blood group':selectedbloodgroups,
     };
     donor.add(data);
+    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Donor data added'),
+    behavior: SnackBarBehavior.floating,
+    backgroundColor: Color.fromARGB(255, 153, 149, 149),
+    margin: EdgeInsets.all(10),));
   }
 
 

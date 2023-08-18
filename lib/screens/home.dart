@@ -10,6 +10,9 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   final CollectionReference donor=FirebaseFirestore.instance.collection('donor');
+  void deleteData(docid){
+    donor.doc(docid).delete();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -88,7 +91,9 @@ class _HomeScreenState extends State<HomeScreen> {
                           iconSize: 25,
                           color: Colors.blue,
                           hoverColor: Colors.red,),
-                          IconButton(onPressed: (){}, 
+                          IconButton(onPressed: (){
+                            deleteData(donorsnap.id);
+                          }, 
                           icon: Icon(Icons.delete),
                           color: const Color.fromARGB(255, 255, 17, 0),
                           iconSize: 25,),

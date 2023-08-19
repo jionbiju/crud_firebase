@@ -22,10 +22,15 @@ class _AddUserState extends State<AddUser> {
       'blood group':selectedbloodgroups,
     };
     donor.add(data);
-    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Donor data added'),
+    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Donor Data Added'),
     behavior: SnackBarBehavior.floating,
-    backgroundColor: Color.fromARGB(255, 153, 149, 149),
+    backgroundColor: Colors.grey,
     margin: EdgeInsets.all(10),));
+  }
+
+  void clearText(){
+    donorname.clear();
+    donorphone.clear();
   }
 
 
@@ -87,6 +92,7 @@ class _AddUserState extends State<AddUser> {
             ),
             onPressed: (){
               adduserdata();
+              clearText();
             },
             child:const Text('Submit', style: TextStyle(fontSize: 25),)),
           ],

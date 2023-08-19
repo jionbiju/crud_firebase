@@ -22,6 +22,10 @@ class _UpdateDonorState extends State<UpdateDonor> {
       'blood group':selectedbloodgroups
     };
     donor.doc(docid).update(data).then((value) => Navigator.pop(context));
+  ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Details Updated'),
+    behavior: SnackBarBehavior.floating,
+    backgroundColor: Colors.grey,
+    margin: EdgeInsets.all(10),));
   }
 
   

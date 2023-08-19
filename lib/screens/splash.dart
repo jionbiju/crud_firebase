@@ -1,4 +1,5 @@
 import 'package:crud_firebase/screens/home.dart';
+import 'package:crud_firebase/screens/start1.dart';
 import 'package:flutter/material.dart';
 
 class Splashscreen extends StatefulWidget {
@@ -17,7 +18,9 @@ class _SplashscreenState extends State<Splashscreen> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      body: Center(child: Image.asset('assets/images/initial_screen.png')
+      body: Center(child: Image.asset('assets/images/initial_screen.png',
+      height: 400,
+      width: 400,)
       ,),
     
     );
@@ -25,6 +28,6 @@ class _SplashscreenState extends State<Splashscreen> {
 
   Future<void> gotohome(BuildContext context) async{
     await Future.delayed(Duration(seconds: 3));
-    Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>HomeScreen()));
+    Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>StartScreen1()));
   }
 }

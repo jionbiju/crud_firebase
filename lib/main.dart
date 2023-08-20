@@ -1,4 +1,6 @@
 
+import 'package:crud_firebase/screens/home.dart';
+import 'package:crud_firebase/screens/start2.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -32,6 +34,8 @@ class _MyAppState extends State<MyApp> {
         routes: {
           '/add':(context) =>const AddUser(),
           'update':(context) => const UpdateDonor(),
+          'skip':(context) => const HomeScreen(),
+          'tostartscreen2':(context) => const StartScreen2(),
           
         },
     );

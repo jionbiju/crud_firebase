@@ -9,6 +9,7 @@ class StartScreen1 extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
           children: [
             Center(child: Image.asset('assets/images/image 1.png',
             height: 500,
@@ -34,24 +35,27 @@ class StartScreen1 extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 7),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                 TextButton(
-                  style: TextButton.styleFrom(
-                    side:const BorderSide(width: 0.6),
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
-                  ),
-                  onPressed: (){
-                  Navigator.pushNamed(context, 'skip');},
-                 child:const Text('skip',style: TextStyle(fontSize: 15),)),
-          
-          
-                 ElevatedButton(
-                  onPressed: (){
-                    Navigator.pushNamed(context, 'tostartscreen2');
-                  }, child:const Text('Next'))
-              ],
+            child: Container(
+              margin:const EdgeInsetsDirectional.only(bottom: 10),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                   TextButton(
+                    style: TextButton.styleFrom(
+                      side:const BorderSide(width: 0.6),
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+                    ),
+                    onPressed: (){
+                    Navigator.pushNamed(context, 'skip');},
+                   child:const Text('skip',style: TextStyle(fontSize: 15),)),
+                      
+                      
+                   ElevatedButton(
+                    onPressed: (){
+                      Navigator.pushNamed(context, 'tostartscreen2');
+                    }, child:const Text('Next'))
+                ],
+              ),
             ),
           ),
           ],

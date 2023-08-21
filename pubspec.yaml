@@ -64,6 +64,7 @@ flutter:
   assets:
       - assets\images\initial_screen.png
       - assets\images\image 1.png
+      - assets\images\image2.png
     # - images/a_dot_burr.jpeg
     # - images/a_dot_ham.jpeg
        

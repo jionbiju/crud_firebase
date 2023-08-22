@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class StartScreen2 extends StatelessWidget {
-  const StartScreen2({super.key});
+class StartScreen3 extends StatelessWidget {
+  const StartScreen3({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -11,11 +11,11 @@ class StartScreen2 extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            Center(child: Image.asset('assets/images/image2.png',
+            Center(child: Image.asset('assets/images/image3.png',
             height: 500,
             width: 550,),),
             
-            const Text('DONATE BLOOD',
+            const Text('BLOOD BANK',
             style: TextStyle(
             color: Colors.red,
             fontSize: 45,
@@ -25,7 +25,7 @@ class StartScreen2 extends StatelessWidget {
           const SizedBox(
               height: 7,
             ),
-          const Text("Every drop counts. Be a lifesaver. Donate blood today and make a difference in someone's tomorrow",
+          const Text("Blood donation is not just about giving blood, it's about giving life, hope, and a chance for someone to see another sunrise.",
           textAlign: TextAlign.center,
           style: TextStyle(
           fontSize: 19
@@ -50,7 +50,7 @@ class StartScreen2 extends StatelessWidget {
                     
                  ElevatedButton(
                   onPressed: (){
-                    Navigator.pushNamed(context, 'tostartscreen3');
+                    Navigator.pushNamed(context, 'skip');
                   }, child:const Text('Next'))
               ],
             ),

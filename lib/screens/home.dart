@@ -10,6 +10,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   final CollectionReference donor=FirebaseFirestore.instance.collection('donor');
+  
   void deleteData(docid){
     donor.doc(docid).delete();
   }

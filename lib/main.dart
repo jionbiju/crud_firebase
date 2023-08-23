@@ -1,5 +1,6 @@
 
 import 'package:crud_firebase/screens/home.dart';
+import 'package:crud_firebase/screens/signin_screen.dart';
 import 'package:crud_firebase/screens/start1.dart';
 import 'package:crud_firebase/screens/start2.dart';
 import 'package:crud_firebase/screens/start3.dart';
@@ -32,7 +33,7 @@ class _MyAppState extends State<MyApp> {
       title:'Blood Donation Page',
       theme: ThemeData(
         primaryColor:Colors.red),
-        home: const Splashscreen(),
+        home: const SignInScreen(),
         routes: {
           '/add':(context) =>const AddUser(),
           'update':(context) => const UpdateDonor(),

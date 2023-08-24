@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -20,6 +21,14 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         backgroundColor: Colors.red,
         title:const Text('Blood Donation App'),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 35),
+            child: IconButton(onPressed: (){
+              logoutButton();
+            }, icon: Icon(Icons.logout_sharp)),
+          )
+        ],
       ),
       floatingActionButton: FloatingActionButton(onPressed: (){
         Navigator.pushNamed(context, '/add');
@@ -109,5 +118,11 @@ class _HomeScreenState extends State<HomeScreen> {
          return Container();
        },),
     );
+  }
+
+  logoutButton(){
+    FirebaseAuth.instance.signOut();
+    Navigator.pushNamed(context, 'tosignin');
+    print('LogOut');
   }
 }

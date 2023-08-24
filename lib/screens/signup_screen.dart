@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class SignUpScreen extends StatefulWidget {
@@ -8,6 +9,10 @@ class SignUpScreen extends StatefulWidget {
 }
 
 class _SignUpScreenState extends State<SignUpScreen> {
+  TextEditingController emailcontroller=TextEditingController();
+  TextEditingController usernamecontroller=TextEditingController();
+  TextEditingController passwordcontroller=TextEditingController();
+  
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
@@ -21,6 +26,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                height: 190,
                width: 190,),
                TextFormField(
+                controller: usernamecontroller,
                 keyboardType: TextInputType.text,
                 decoration:const InputDecoration(
                   prefixIcon: Icon(Icons.account_circle_rounded),
@@ -41,6 +47,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 height: 20,
               ),
               TextFormField(
+                controller: emailcontroller,
                 keyboardType: TextInputType.emailAddress,
                 decoration:const InputDecoration(
                   prefixIcon: Icon(Icons.account_circle_rounded),
@@ -61,6 +68,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 height: 20,
               ),
               TextFormField(
+                controller: passwordcontroller,
                 obscureText: true,
                 decoration:const InputDecoration(
                   prefixIcon: Icon(Icons.lock),
@@ -89,15 +97,24 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       )
                    )
                 ),
-              onPressed: (){}, child: const Text('SignUp',style: TextStyle(
+              onPressed: (){signupButton(context);}, child: const Text('SignUp',style: TextStyle(
                 fontSize: 23,
-              ),)),
-              
-              
+              ),
+              )), 
             ],
           ),
         ),
       ),
     );
   }
+
+signupButton(BuildContext context){
+  FirebaseAuth.instance.createUserWithEmailAndPassword(
+  email: emailcontroller.text, 
+  password: passwordcontroller.text);
+  
+  Navigator.pushNamed(context, 'skip');
+  print('New account created');
+  
+}
 }

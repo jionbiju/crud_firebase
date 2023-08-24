@@ -42,6 +42,7 @@ class _MyAppState extends State<MyApp> {
           'tostartscreen2':(context) => const StartScreen2(),
           'tostartscreen3':(context) => const StartScreen3(),
           'tosignup':(context) => const SignUpScreen(),
+          'tosignin':(context) => const SignInScreen(),
           
         },
     );

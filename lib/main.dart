@@ -1,6 +1,7 @@
 
 import 'package:crud_firebase/screens/home.dart';
 import 'package:crud_firebase/screens/signin_screen.dart';
+import 'package:crud_firebase/screens/signup_screen.dart';
 import 'package:crud_firebase/screens/start1.dart';
 import 'package:crud_firebase/screens/start2.dart';
 import 'package:crud_firebase/screens/start3.dart';
@@ -40,6 +41,7 @@ class _MyAppState extends State<MyApp> {
           'skip':(context) => const HomeScreen(),
           'tostartscreen2':(context) => const StartScreen2(),
           'tostartscreen3':(context) => const StartScreen3(),
+          'tosignup':(context) => const SignUpScreen(),
           
         },
     );

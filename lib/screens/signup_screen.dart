@@ -1,15 +1,13 @@
-
-
 import 'package:flutter/material.dart';
 
-class SignInScreen extends StatefulWidget {
-  const SignInScreen({super.key});
+class SignUpScreen extends StatefulWidget {
+  const SignUpScreen({super.key});
 
   @override
-  State<SignInScreen> createState() => _SignInScreenState();
+  State<SignUpScreen> createState() => _SignUpScreenState();
 }
 
-class _SignInScreenState extends State<SignInScreen> {
+class _SignUpScreenState extends State<SignUpScreen> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
@@ -19,15 +17,35 @@ class _SignInScreenState extends State<SignInScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.asset('assets/images/initial_screen.png',
-              height:190,
-              width: 190 ,),
+               Image.asset('assets/images/initial_screen.png',
+               height: 190,
+               width: 190,),
                TextFormField(
                 keyboardType: TextInputType.text,
                 decoration:const InputDecoration(
                   prefixIcon: Icon(Icons.account_circle_rounded),
                   prefixIconColor: Colors.red,
                   hintText: 'UserName',
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Color.fromARGB(255, 0, 191, 249),
+                      strokeAlign: BorderSide.strokeAlignInside,
+                      style: BorderStyle.solid,
+                      width: 2,
+                    ),
+                    borderRadius: BorderRadius.all(Radius.circular(15)),
+                  ),
+                ),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              TextFormField(
+                keyboardType: TextInputType.emailAddress,
+                decoration:const InputDecoration(
+                  prefixIcon: Icon(Icons.account_circle_rounded),
+                  prefixIconColor: Colors.red,
+                  hintText: 'Email',
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(
                       color: Color.fromARGB(255, 0, 191, 249),
@@ -71,18 +89,11 @@ class _SignInScreenState extends State<SignInScreen> {
                       )
                    )
                 ),
-              onPressed: (){}, child: const Text('Login',style: TextStyle(
+              onPressed: (){}, child: const Text('SignUp',style: TextStyle(
                 fontSize: 23,
               ),)),
-              const SizedBox(
-                height: 10,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                const Text("Don't have account?"),
-                TextButton(onPressed: (){Navigator.pushNamed(context, 'tosignup');}, child:const Text('Sign Up'))
-              ],),
+              
+              
             ],
           ),
         ),

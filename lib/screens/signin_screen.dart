@@ -1,5 +1,6 @@
 
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class SignInScreen extends StatefulWidget {
@@ -10,6 +11,9 @@ class SignInScreen extends StatefulWidget {
 }
 
 class _SignInScreenState extends State<SignInScreen> {
+  TextEditingController emailController=TextEditingController();
+  TextEditingController passwordController=TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
@@ -23,11 +27,12 @@ class _SignInScreenState extends State<SignInScreen> {
               height:190,
               width: 190 ,),
                TextFormField(
+                controller: emailController,
                 keyboardType: TextInputType.text,
                 decoration:const InputDecoration(
                   prefixIcon: Icon(Icons.account_circle_rounded),
                   prefixIconColor: Colors.red,
-                  hintText: 'UserName',
+                  hintText: 'Email',
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(
                       color: Color.fromARGB(255, 0, 191, 249),
@@ -43,6 +48,7 @@ class _SignInScreenState extends State<SignInScreen> {
                 height: 20,
               ),
               TextFormField(
+                controller: passwordController,
                 obscureText: true,
                 decoration:const InputDecoration(
                   prefixIcon: Icon(Icons.lock),
@@ -71,7 +77,7 @@ class _SignInScreenState extends State<SignInScreen> {
                       )
                    )
                 ),
-              onPressed: (){}, child: const Text('Login',style: TextStyle(
+              onPressed: (){loginButton(context);}, child: const Text('Login',style: TextStyle(
                 fontSize: 23,
               ),)),
               const SizedBox(
@@ -88,5 +94,21 @@ class _SignInScreenState extends State<SignInScreen> {
         ),
       ),
     );
+  }
+  loginButton(BuildContext context){
+    FirebaseAuth.instance.signInWithEmailAndPassword(
+      email: emailController.text,
+      password: passwordController.text).then((value){
+        print('logined');
+        Navigator.pushNamed(context, 'skip');
+      }).onError((error, stackTrace) {
+        print("Error ${error.toString()}");
+        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Invalid Email or Password'),
+         behavior: SnackBarBehavior.floating,
+         backgroundColor: Color.fromARGB(255, 255, 0, 0),
+         margin: EdgeInsets.all(15),));
+      });
+      
+      
   }
 }

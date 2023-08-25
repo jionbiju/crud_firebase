@@ -121,8 +121,10 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   logoutButton(){
-    FirebaseAuth.instance.signOut();
-    Navigator.pushNamed(context, 'tosignin');
-    print('LogOut');
+    FirebaseAuth.instance.signOut().then((value) {
+      print('LogOut');
+      Navigator.pushNamed(context, 'tosignin');
+    });
+    
   }
 }

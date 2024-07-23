@@ -21,15 +21,17 @@ The Blood Bank App is a mobile application developed using Flutter that facilita
 - **Delete Recipients:** Remove recipient records from the database.
 
 ### Screenshots
+<div style="display: flex; flex-wrap: wrap; justify-content: center;">
+  <img src="assets/images/screenshot1.png" alt="screenshot1" width="300" height="450" style="margin: 15px;">
+  <img src="assets/images/screenshot2.png" alt="screenshot2" width="300" height="450" style="margin: 15px;">
+  <img src="assets/images/screenshot3.png" alt="screenshot3" width="300" height="450" style="margin: 15px;">
+  <img src="assets/images/screenshot4.png" alt="screenshot4" width="300" height="450" style="margin: 15px;">
+  <img src="assets/images/screenshot5.png" alt="screenshot5" width="300" height="450" style="margin: 15px;">
+  <img src="assets/images/screenshot6.png" alt="screenshot6" width="300" height="450" style="margin: 15px;">
+  <img src="assets/images/screenshot7.png" alt="screenshot7" width="300" height="450" style="margin: 15px;">
+  <img src="assets/images/screenshot8.png" alt="screenshot8" width="300" height="450" style="margin: 15px;">
+</div>
 
-<img src="assets/images/screenshot1.png" alt="screenshot1" width="300" height="450" style="margin: 15px;">
-<img src="assets/images/screenshot2.png" alt="screenshot2" width="300" height="450" style="margin: 15px;">
-<img src="assets/images/screenshot3.png" alt="screenshot3" width="300" height="450" style="margin: 15px;">
-<img src="assets/images/screenshot4.png" alt="screenshot4" width="300" height="450" style="margin: 15px;">
-<img src="assets/images/screenshot5.png" alt="screenshot5" width="300" height="450" style="margin: 15px;">
-<img src="assets/images/screenshot6.png" alt="screenshot6" width="300" height="450" style="margin: 15px;">
-<img src="assets/images/screenshot7.png" alt="screenshot7" width="300" height="450" style="margin: 15px;">
-<img src="assets/images/screenshot8.png" alt="screenshot8" width="300" height="450" style="margin: 15px;">
 
 # CRUD Operation Using Firebase
 

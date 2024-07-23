@@ -34,7 +34,7 @@ class _MyAppState extends State<MyApp> {
       title:'Blood Donation Page',
       theme: ThemeData(
         primaryColor:Colors.red),
-        home: const SignInScreen(),
+        home: const Splashscreen(),
         routes: {
           '/add':(context) =>const AddUser(),
           'update':(context) => const UpdateDonor(),

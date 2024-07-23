@@ -1,3 +1,36 @@
+# Blood Bank App
+
+## Overview
+The Blood Bank App is a mobile application developed using Flutter that facilitates the management of blood donation and transfusion services. The app allows users to perform CRUD (Create, Read, Update, Delete) operations related to donors, recipients, and blood inventories, ensuring an efficient and seamless process for managing blood bank services.
+
+## Features
+
+### User Registration and Authentication
+- **Register and Log In:** Users can register and log in to access the app's features securely.
+
+### Donor Management
+- **Add Donors:** Register new blood donors with their personal details and blood type.
+- **View Donors:** Browse and search through the list of registered donors.
+- **Update Donor Information:** Edit donor details when necessary.
+- **Delete Donors:** Remove donor records from the database.
+
+### Recipient Management
+- **Add Recipients:** Register new recipients with their personal details and blood requirements.
+- **View Recipients:** Browse and search through the list of registered recipients.
+- **Update Recipient Information:** Edit recipient details when necessary.
+- **Delete Recipients:** Remove recipient records from the database.
+
+### Screenshots
+
+<img src="assets/images/screenshot1.png" alt="screenshot1" width="300" height="450" style="margin: 15px;">
+<img src="assets/images/screenshot2.png" alt="screenshot2" width="300" height="450" style="margin: 15px;">
+<img src="assets/images/screenshot3.png" alt="screenshot3" width="300" height="450" style="margin: 15px;">
+<img src="assets/images/screenshot4.png" alt="screenshot4" width="300" height="450" style="margin: 15px;">
+<img src="assets/images/screenshot5.png" alt="screenshot5" width="300" height="450" style="margin: 15px;">
+<img src="assets/images/screenshot6.png" alt="screenshot6" width="300" height="450" style="margin: 15px;">
+<img src="assets/images/screenshot7.png" alt="screenshot7" width="300" height="450" style="margin: 15px;">
+<img src="assets/images/screenshot8.png" alt="screenshot8" width="300" height="450" style="margin: 15px;">
+
 # CRUD Operation Using Firebase
 
 # Firebase Configuration with help of FlutterFire CLI

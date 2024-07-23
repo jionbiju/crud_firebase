@@ -44,7 +44,7 @@ class StartScreen2 extends StatelessWidget {
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
                   ),
                   onPressed: (){
-                  Navigator.pushNamed(context, 'skip');},
+                  Navigator.pushNamed(context, 'tosignin');},
                  child:const Text('skip',style: TextStyle(fontSize: 15),)),
                     
                     
